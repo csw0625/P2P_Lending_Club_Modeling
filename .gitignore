@@ -1,0 +1,9 @@
+# Python / Jupyter 관련
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
+
+# 가상환경
+.venv/
+env/
+venv/
