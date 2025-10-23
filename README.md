@@ -60,7 +60,7 @@
   - 결측비율 ≥ 40% 열 제거
   - 결측 패턴 상관 높은 변수 조합은 보간 예측자에서 제외
 - 보간
-  - Custom IterativeImputer로 수렴·편향 제어
+  - Custom IterativeImputer로 Imputation Error 제어
 - 수치 변환
   - Quantile Transformation으로 분포 안정화
 - 범주 인코딩(차원 최소화)
