@@ -42,11 +42,11 @@
 - 목표 지표: **Sharpe Ratio** = 초과수익률 평균 ÷ 초과수익률 표준편차
 - 라벨 정의
   - `y = 1` : 대출 Annual IRR < 동일 만기 국채 수익률 → 포트폴리오 제외
-  - `y = 0` : 대출 Annual IRR ≥ 동일 만기 국채 수익률 → 포트폴리오 편입
+  - `y = 0` : 대출 Annual IRR ≥ 동일 만기 국채 수익률 → 포트폴리오 투자
 - 평가 절차
   1) 분류기에서 샘플별 확률 산출  
   2) 임곗값 0.01~0.99 스윕  
-  3) 임곗값별 편입/제외로 구성된 포트폴리오 초과수익률 계산  
+  3) 임곗값별 투자/제외로 구성된 포트폴리오 초과수익률 계산  
   4) Sharpe Ratio 최대화 임곗값 선택(부트스트랩으로 평균·표준편차 확인)
 
 ### 2.2 분석 Flow
@@ -63,7 +63,7 @@
   - `emp_length` ordinal
   - `home_ownership` 주요 3개만 one-hot(MORTGAGE/OWN/RENT), 기타 통합
   - `purpose` 4그룹 재범주화 후 주요 그룹만 one-hot
-  - `verification_status` binary, `initial_list_status` binary
+  - `verification_status` binary encoding, `initial_list_status` binary encoding
 - 기타 처리
   - `revol_util`의 % 제거, `fico_range_high/low` 평균으로 `avg_fico` 생성
 
@@ -92,6 +92,6 @@
   - 임곗값 탐색을 통해 포트폴리오 관점 성과를 직접 최적화
   - 단기·저위험 특성 편입이 Sharpe 개선에 기여
 - 한계 및 향후 과제
-  - 고카디널리티 텍스트/등급 변수 추가 활용
-  - 불균형 대응(비용민감 학습, calibration, focal 계열) 고도화
+  - High Cardinality 범주형 변수 추가 활용
+  - 불균형 대응(비용민감 학습, calibration 계열) 고도화
   - Sharpe 직접 목적함수 연구(전역 지표의 안정적 근사)
