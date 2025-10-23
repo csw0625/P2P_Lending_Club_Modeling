@@ -11,7 +11,7 @@
 ├── 보고서.pdf
 ├── 발표자료.pdf
 ├── Final_Code(Preprocessing, XGBoost).ipynb
-├── 보고서 전처리 코드.ipynb
+├── preprocessing.ipynb
 ├── data.zip                         # Datasets
 │   ├── GS3.csv                      # 36개월 만기 미국 국채
 │   ├── GS5.csv                      # 60개월 만기 미국 국채
