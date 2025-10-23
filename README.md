@@ -60,14 +60,14 @@
   - 결측비율 ≥ 40% 열 제거
   - 결측 패턴 상관 높은 변수 조합은 보간 예측자에서 제외
 - 보간
-  - IterativeImputer 커스텀(MICE 변형)로 수렴·편향 제어
+  - Custom IterativeImputer로 수렴·편향 제어
 - 수치 변환
   - Quantile Transformation으로 분포 안정화
 - 범주 인코딩(차원 최소화)
-  - `emp_length` ordinal
+  - `emp_length` ordinal encoding
   - `home_ownership` 주요 3개만 one-hot(MORTGAGE/OWN/RENT), 기타 통합
   - `purpose` 4그룹 재범주화 후 주요 그룹만 one-hot
-  - `verification_status` binary encoding, `initial_list_status` binary encoding
+  - `verification_status`, `initial_list_status` binary encoding
 - 기타 처리
   - `revol_util`의 % 제거, `fico_range_high/low` 평균으로 `avg_fico` 생성
 
@@ -90,12 +90,12 @@
 ---
 
 ## 3. 결론
-- Sharpe 기반 라벨링과 임곗값 최적화로 투자 의사결정 중심의 분류 파이프라인 구성
+- 포트폴리오 수익률 기반 라벨링과 임곗값 최적화로 투자 의사결정 중심의 분류 파이프라인 구성
 - **XGBoost + 임곗값 0.3195**가 최고 Sharpe 0.2016 기록
 - 시사점
   - 임곗값 탐색을 통해 포트폴리오 관점 성과를 직접 최적화
   - 단기·저위험 특성 편입이 Sharpe 개선에 기여
 - 한계 및 향후 과제
-  - High Cardinality 범주형 변수 추가 활용
+  - High Cardinality 범주형 변수 추가 활용(직업)
   - 불균형 대응(비용민감 학습, calibration 계열) 고도화
   - Sharpe 직접 목적함수 연구(전역 지표의 안정적 근사)
