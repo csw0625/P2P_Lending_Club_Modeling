@@ -1,6 +1,10 @@
 # P2P_Lending_Club_Modeling
 ### SNU KDT 6조
 ### 권서영 이소민 이유림 조성우 지희선 홍예나
+> **목표**: Lending Club 2020 대출 데이터와 미국 국채 수익률(**GS3=36개월**, **GS5=60개월**)을 결합해 **초과수익 여부**를 분류하고, 포트폴리오 **Sharpe Ratio**가 최대가 되도록 임곗값을 선정  
+> **프로세스**: Data Prep → **IRR 계산 & 라벨링**(IRR vs R_f) → **모델링** → **Threshold 탐색**(0.01–0.99) → **Sharpe 평가**(부트스트랩) → **최종 모델 선택**(XGBoost, threshold=0.3195)
+
+
 <pre>
 .
 ├── README.md
