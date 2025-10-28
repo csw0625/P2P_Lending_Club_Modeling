@@ -1,6 +1,8 @@
 # P2P_Loan_Modeling
 ### SNU KDT 6조
 ### 권서영 이소민 이유림 조성우 지희선 홍예나
+<img width="1600" height="246" alt="LendingClub_logo" src="https://github.com/user-attachments/assets/c7c30be9-1eb3-4e02-bdf0-6bde76365a16" />
+
 > **목표**: Lending Club(P2P) 대출 데이터에서 대출 수익률과 미국 국채 수익률 비교 및 **초과수익 여부**를 분류하여 포트폴리오 **Sharpe Ratio**가 최대가 되는 Threshold 선정  
 > **프로세스**: Data Prep → **IRR 계산 & 라벨링**(대출 IRR vs 국채수익) → **모델링** → **Threshold 탐색**(0.01–0.99) → **Sharpe 평가**(부트스트랩) → **최종 모델 선정**
 
